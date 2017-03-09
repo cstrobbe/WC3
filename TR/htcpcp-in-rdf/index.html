@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>HTCPCP Vocabulary in RDF</title>
+  <link rel="stylesheet" type="text/css" href="../../css/spec.css" />
+  <style type="text/css">
+      /*<![CDATA[*/
+.issue { border: thin solid #FFAA88;
+   background-color: #FFE8E8;
+   margin: 1em 4em 1em 0em ; 
+          }
+.note { background-color: #dfd;}
+.boilerplate { color: #888;}
+      /*]]>*/
+  </style>
+  <style type="text/css">
+    body { font-family: 'Trebuchet MS', Helvetica, Geneva, Verdana, sans-serif; line-height: 1.4em;}
+    h1, h2, h3, h4, h5, h6 { font-weight: bold; letter-spacing: 0.05em; font-variant: normal; }
+    h2 { margin-top: 1.5em; }
+    acronym, abbr { font-variant: normal; text-transform: none; } /* prevent smallcaps in Opera9 */
+    blockquote { color: inherit; background-color: #eee; padding: .3em 1em; }
+    ul, ol { list-style-position: outside; padding-left: 2em; }
+    ul, ol, dl, blockquote, .blockcode, p.bentoweb, div.bentoweb { margin-left: .5em; margin-right: .5em; }
+    code { font-family: Futura, Frutiger, "ITC Officina", "FF Meta", Myriad, Lucida, sans-serif; }
+    code, li code { background: inherit; color: #c00;}
+    p.blockcode { border: 1px solid #ccc; padding: .6em; }
+    p.blockcode span.value, p code span.value, p code em.value { color: #333; background: inherit; }
+    p code em.value { font-style: normal; font-weight: bold; }
+    p.blockcode span.comment { color: #555; background: inherit; }
+    .rfc2119 { font-weight: bold; font-style: normal; text-transform:uppercase; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #000; padding-left: .3em; padding-right: .3em; }
+    td ol { margin-left: 0; padding-left: 1.2em; }
+    li { margin-top: .3em; }
+    ul.attlist { border: 1px dotted #000; }
+    ul.contentmodel { border: 1px dotted #000; }
+    ul.attlist, ul.contentmodel {padding-bottom: .3em;  background-color: #eee;}
+    div.bentoweb, p.bentoweb { border: 1px solid #000; padding: .5em; }
+    div.tsdtf, p.tsdtf { border: 2px solid #f00; padding: .5em; }
+    .bentoweb em, .tsdtf em { font-style: oblique; font-weight: bold; }
+    p.warning { border: 4px solid #f00; background: #ff9; color: inherit; padding: .5em; margin-top: 1em; margin-bottom: 1em;}
+    p.warning em { font-weight: bold; }
+    div.chapt { margin-top: 1em;  }
+    del { color: #f60; background: inherit; }
+    ins, ins * { text-decoration: none; color: #060; background: inherit; }
+    q:before { content: ""; } q:after { content: ""; } /* two separate rules because combined rule is not supported by Opera 6 */
+    /* div.stable { border: 2px solid #0c0; color: #000; background-color: #ffe; padding: .5em; }
+     strong.stable { color: #0a0; background: inherit; }
+     a[id]:after { content: " [ID:#" attr(id) "] "; font-size: .8em; font-weight: normal; background: transparent; color: #666; }
+    */
+
+    /* generating content and counters work in Opera6 but not in IE or Mozilla ...*/
+    /*li.chapter, li.section, li.subsection { list-style-type: none;}
+    h2.chapter:before { content: counter(chapter); counter-increment: chapter; counter-reset: section; padding-right: 1em; }
+    li.chapter:before { content: counter(tocChapter); counter-increment: tocChapter; counter-reset: tocSection; padding-right: 1em; }
+    h3:before { content: counter(chapter) "." counter(section); counter-increment: section; counter-reset: subsection; padding-right: 1em;}
+    li.section:before { content: counter(tocChapter) "." counter(tocSection); counter-increment: tocSection; counter-reset: tocSubsection; padding-right: 1em;}
+    h4:before { content: counter(chapter) "." counter(section) "." counter(subsection); counter-increment: subsection; counter-reset: h5section; padding-right: 1em;}
+    li.subsection:before { content: counter(tocChapter) "." counter(tocSection) "." counter(tocSubsection); counter-increment: tocSubsection; padding-right: 1em;}
+    h5:before { content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(h5section); counter-increment: h5section; counter-reset: h6section; padding-right: 1em;}*/
+    /*h6:before { content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(subsubsection) "." counter (h6section); counter-increment: h6section; padding-right: 1em;}*/
+
+
+    .example {
+      margin: 1em 2em 1em 2em; color: #000; background-color: #fff;
+      padding: 0.5em; border: 1px dotted #e63232;
+    }
+    pre {
+      border: 1px dotted #000; color: #000; background-color: #f4f3e7;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="head">
+<!--p>@@icons</p-->
+
+<h1 id="main"><abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> Vocabulary in
+<abbr title="Resource Description Framework">RDF</abbr></h1>
+
+<h2><abbr title="Web-Controlled Coffee Consortium">WC3</abbr> <abbr
+title="Repository of Funny Content">RFC</abbr> Draft 01 April 2008</h2>
+<dl>
+  <dt>This version:</dt>
+    <dd><a
+      href="http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf/20080401/htcpcp-in-rdf_20080401.html">http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf/20080401/htcpcp-in-rdf_20080401.html</a></dd>
+  <dt>Latest version:</dt>
+    <dd><a
+      href="http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf/">http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf/</a></dd>
+  <dt>Author:</dt>
+    <dd><!--a
+            href="http://www.google.cn/search?hl=zh-CN&amp;ie=GB2312&amp;q=%22christophe+strobbe%22&amp;btnG=Google+%CB%D1%CB%F7&amp;meta="-->
+      Chief Arabica<!--/a-->
+      , <abbr title="Chief Executive Brewer">CEB</abbr>,
+      <abbr>WC3</abbr><!-- &amp; <a
+            href="http://www.docarch.be/" xml:lang="nl" lang="nl">DocArch,
+            Katholieke Universiteit Leuven</a>-->
+    </dd>
+</dl>
+
+<p class="copyright">Copyright © 2008 <abbr
+title="Web-Controlled Coffee Consortium">WC3</abbr><sup>®</sup>, All
+Rights Reserved. <abbr>WC3</abbr> liability, trademark and document use
+rules apply.</p>
+</div>
+<hr title="Separator for header" />
+<!-- @@ -->
+
+<div>
+<h2 class="notoc"><a id="abstract" name="abstract">Abstract</a></h2>
+
+<p>The Hyper Text Coffee Pot Control Protocol (HTCPCP) is a protocol for
+controlling, monitoring and diagnosing coffee pots over a network. The
+Resource Description Framework (<abbr>RDF</abbr>) is a general-purpose
+language for representing information in the Web.</p>
+
+<p>This document defines <em><abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> Vocabulary in
+<abbr title="Resource Description Framework">RDF</abbr></em> in order
+to allow <abbr>HTCPCP</abbr> headers that have been exchanged between a
+client (in other words, a coffee addict) and a server (a networked device
+that can brew, store and deliver heated coffee beverages) to be recorded in
+<abbr>RDF</abbr> format. The objective of this vocabulary is to support
+qualitiy assurance testing, and to serve as a machine-readable component in
+conformance claims and in reporting languages such as the Evaluation and
+Report Language (<abbr>EARL</abbr>) [<a
+href="#ref-earl-schema"><abbr>EARL</abbr> Schema</a>].</p>
+</div>
+
+<div>
+<h2><a id="status" name="status">Status of This Document</a></h2>
+
+<p>This section describes the status of this document at the time of its
+publication. Other documents may supersede this document.</p>
+
+<p>This <abbr>WC3</abbr> First Public <abbr
+title="Repository of Funny Content">RFC</abbr> Draft of
+<abbr>HTCPCP</abbr> Vocabulary in <abbr>RDF</abbr> was published
+on 1 April 2008. This document is expected to be published as a
+<abbr>WC3</abbr> <abbr
+title="Repository of Funny Content">RFC</abbr> Document after more brewing
+experience, tasting and refinement. </p>
+
+<p>Publication as a <abbr>RFC</abbr> Draft does not imply endorsement
+by the <abbr>WC3</abbr> Membership. This is a draft document and may be
+rebrewed, repoured or become stale at any time. It is inappropriate to cite
+this document as other than brewing in progress.</p>
+</div>
+<hr />
+
+<div class="toc" style="display:none;">
+<h2><a id="contents" name="contents">Table of Contents</a></h2>
+<ol class="tocx">
+  <li><a href="#intro">Introduction</a></li>
+  <li><a href="#grammar">Grammar</a> 
+    <ol>
+      <li><a href="#encoding">Encoding</a></li>
+      <li><a href="#mimetype">MIME type text/rdf+n3; charset=utf-8</a> 
+        <ol>
+          <li><a href="#charset">MIME parameter: charset</a></li>
+          <li><a href="#frag">Fragment identifier syntax and
+          semantics</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><ol>
+      <li><a href="#booleans">Boolean literals</a></li>
+    </ol>
+  </li>
+</ol>
+
+<h3><a id="appendices" name="appendices">Appendices</a></h3>
+<ol class="tocx">
+  <li><a href="#References">References</a> 
+    <ol>
+      <li><a href="#ref-norm">Normative</a></li>
+      <li><a href="#ref-inform" class="note">Non-normative</a></li>
+    </ol>
+  </li>
+</ol>
+</div>
+
+<h2 id="intro">Introduction</h2>
+
+<p>Coffee is one of the most popular beverages worldwide [<a
+href="#ref-villanueva">Villanueva</a>] and is the second most traded
+commodity in the world (after oil) [<a href="#ref-jerome-2007">Jerome
+2007</a>]. Worldwide, more 1400 millions cups of coffee are drunk every day
+[<a href="#ref-jerome-2007">Jerome 2007</a>]. Internet World Stats estimates
+that there are over 1.13 billion internet users worldwide (1,139,872,109 in
+December 2007) [<a href="#ref-intworldstats">Internet World Stats</a>]. Thus,
+there is dark, strong demand for a protocol designed expressoly for
+controlling networked devices that can brew, store and deliver heated coffee
+beverages. The Hyper Text Coffe Pot Control Protocol
+(<abbr>HTCPCP</abbr>) [<a
+href="#ref-rfc2324"><abbr>RFC</abbr>2324</a>] addressed this demand by
+extending <abbr>HTTP</abbr> with commands such as BREW, GET and
+WHEN.</p>
+
+<p>This document defines a representation of the Hyper Text Coffe Pot Control
+Protocol (<abbr>HTCPCP</abbr>) using the Resource Description Framework
+(<abbr>RDF</abbr>). It defines a collection of <abbr
+title="Resource Description Framework">RDF</abbr> classes and properties
+that represent the <abbr
+title="Hyper Text Coffe Pot Control Protocol">HTCPCP</abbr> vocabulary as
+defined by the <abbr
+title="Hyper Text Coffe Pot Control Protocol">HTCPCP</abbr> specification.
+These <abbr title="Resource Description Framework">RDF</abbr> terms can
+be used to record <abbr
+title="Hyper Text Coffe Pot Control Protocol">HTCPCP</abbr> request and
+response messages in <abbr
+title="Resource Description Framework">RDF</abbr> format, for example by
+automated coffee quality evaluation tools to describe servings of caffeinated
+beverages, including the various headers exchanged between the client and
+server during coffee negotiation. Since <abbr>HTCPCP</abbr> is defined
+as an extension of <abbr>HTTP</abbr>, the current draft is defined as
+an extension of <abbr>HTTP</abbr> in <abbr>RDF</abbr> [<a
+href="#ref-httprdf"><abbr>HTTP</abbr>-<abbr>RDF</abbr></a>].</p>
+
+<h2>Namespaces</h2>
+
+<p>The <abbr title="Resource Description Framework">RDF</abbr>
+representation of the <abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> vocabulary
+defined by this document uses the following namespaces:</p>
+
+<table summary="Overview of namespaces associated with vocabulary prefixes">
+  <thead>
+    <tr>
+      <th scope="col">Vocabulary</th>
+      <th scope="col">Namespace <abbr
+        title="Uniform Resource Identifier">URI</abbr></th>
+      <th scope="col">Prefix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><abbr
+        title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr></td>
+      <td><code>http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf-rfc#</code></td>
+      <td><code>coffee</code></td>
+    </tr>
+    <tr>
+      <td scope="row"><abbr
+        title="Hyper Text Transfer Protocol">HTTP</abbr></td>
+      <td><code>http://www.w3.org/2006/http#</code></td>
+      <td><code>http</code></td>
+    </tr>
+    <tr>
+      <td scope="row"><abbr
+        title="Hyper Text Transfer Protocol">HTTP</abbr> headers</td>
+      <td><code>http://www.w3.org/2006/http-header#</code></td>
+      <td><code>http-header</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note</strong>: the namespace <abbr>URI</abbr> for <abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> is temporary
+and will be updated when <em><abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> Vocabulary in
+<abbr title="Resource Description Framework">RDF</abbr></em> is
+finalized.</p>
+
+<h2><abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr>/1.0
+Connection Class (<abbr title="Request for Comment">RFC</abbr>
+2324)</h2>
+
+<p>The <code>coffee:Connection</code> class represents a connection that is
+used for <abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> control. The
+following properties may appear in nodes of type <code>Connection</code>:</p>
+<ul>
+  <li><code>http:connectionAuthority</code> representing the connected
+    authority (server host and port), and</li>
+  <li><code>http:request</code> representing an <abbr
+    title="Hyper Text Transfer Protocol">HTTP</abbr> request.</li>
+</ul>
+
+<div class="example">
+<p><strong>Example:</strong> An instance of the
+<code>coffee:Connection</code> class.</p>
+<pre>&lt;coffee:Connection rdf:ID="conn"&gt;
+  &lt;http:connectionAuthority&gt;arabica.example.org:80&lt;/http:connectionAuthority&gt;
+  &lt;http:request rdf:resource="#req0"/&gt;
+&lt;/coffee:Connection&gt;</pre>
+</div>
+<!-- end example -->
+
+<p>When the <code>coffee:Connection</code> class is used to record more than
+one request sent to a coffee pot, the order of these requests (usually coffee
+cups) may be significant. For such cases, an <abbr
+title="Resource Description Framework">RDF</abbr> collection can be used
+as follows:</p>
+
+<div class="example">
+<p><strong>Example:</strong> An instance of the
+<code>coffee:Connection</code> class with two coffee cup requests.</p>
+<pre>&lt;coffee:Connection rdf:ID="conn2"&gt;
+  &lt;http:connectionAuthority&gt;arabica.example.org:80&lt;/http:connectionAuthority&gt;
+  &lt;http:request rdf:parseType="Collection"&gt;
+    &lt;http:Request rdf:about="#espresso"/&gt;
+    &lt;http:Request rdf:about="#lungo"/&gt;
+  &lt;/http:request&gt;
+&lt;/coffee:Connection&gt;</pre>
+</div>
+<!-- end example -->
+
+<h2><abbr
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr>/1.0 Added
+Methods (<abbr title="Request for Comment">RFC</abbr> 2324)</h2>
+
+<p>This section defines <abbr>RDF</abbr> terms for the
+<abbr>HTCPCP</abbr>/1.0 specification according to [<a
+href="#ref-rfc2324"><abbr>RFC</abbr> 2324</a>].</p>
+
+<h3>Subclasses of the Request Class (<abbr>HTTP</abbr> Vocabulary in
+<abbr>RDF</abbr>)</h3>
+
+<p><abbr>HTTP</abbr> Vocabulary in <abbr>RDF</abbr> [<a
+href="#ref-httprdf"><abbr>HTTP</abbr>-<abbr>RDF</abbr></a>]
+already defines a <code>Request</code> class. There are several
+<abbr>HTCPCP</abbr> subclasses that derive from the
+<code>Request</code> class.</p>
+
+<h4><code>Brew</code> Class</h4>
+
+<p>The <code>Brew</code> class represents an <abbr>HTCPCP</abbr> BREW
+request.</p>
+
+<div class="example">
+<p><strong>Example:</strong> An instance of the
+<code>coffee:BrewRequest</code> class.</p>
+<pre>&lt;coffee:BrewRequest rdf:ID="req0"&gt;
+  &lt;http:abs_path&gt;/&lt;/http:abs_path&gt;
+  &lt;htcpcp:version&gt;1.0&lt;/htcpcp:version&gt;
+  &lt;htcpcp:header rdf:resource="#headerSafe"/&gt;
+  &lt;htcpcp:response rdf:resource="#responseCup"/&gt;
+&lt;/http:BrewRequest&gt;</pre>
+</div>
+<!-- end example -->
+
+<h4><code>PropFind</code> Class</h4>
+
+<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+
+<h4><code>When</code> Class</h4>
+
+<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+
+<h3>Header Properties</h3>
+
+<h4><code>Safe</code> Property</h4>
+
+<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+
+<h4>Accept Additions Property</h4>
+
+<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+
+<h3>Subclasses of the Response Class (<abbr>HTTP</abbr> Vocabulary in
+<abbr>RDF</abbr>)</h3>
+
+<p><abbr>HTTP</abbr> Vocabulary in <abbr>RDF</abbr> [<a
+href="#ref-httprdf"><abbr>HTTP</abbr>-<abbr>RDF</abbr></a>]
+already defines a <code>Response</code> class.</p>
+
+<h2>Vocabulary Terms</h2>
+
+<h3>Classes</h3>
+
+<table>
+  <!--caption>Classes in the <abbr>HTCPCP</abbr> namespace</caption-->
+  <thead>
+    <tr>
+      <th scope="col">Class name</th>
+      <th scope="col">Label</th>
+      <th scope="col">Allowable types</th>
+      <th scope="col">Suggested types</th>
+      <th scope="col">Required properties</th>
+      <th scope="col">Optional properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="terms-classes-ResponseCode">
+      <td scope="row"><code>htcpcp:ResponseCode</code></td>
+      <td>Response Code</td>
+      <td><code>htcpcp:406</code> (Not Acceptable), <code>htcpcp:418</code>
+        (I’m a Teapot)</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+
+<h2>Future Work</h2>
+<ul>
+  <li>An implementation of <abbr>HTCPCP</abbr> in
+    <abbr>RDF</abbr> using Enterprise JavaBeans [<a
+    href="#ref-jsr220"><abbr>JSR</abbr>220</a>].</li>
+  <li>Testing <abbr>HTCPCP</abbr> connections over Secure Coffee Pot
+    Layer (<abbr>SCL</abbr>/1.0) [<a
+    href="#ref-rfc9999"><abbr>RFC</abbr>9999</a>]</li>
+  <li>Link <abbr>HTCPCP</abbr> implementation with <abbr
+    title="Mind Reading Markup Language">MRML</abbr> implementation [<a
+    href="#ref-mrml"><abbr>MRML</abbr></a>], so brewing of coffee can
+    start when caffeine shortage in detected in user’s brain.</li>
+</ul>
+<hr />
+
+<h2 id="References">References</h2>
+<dl>
+  <dt><a id="ref-earl-schema" name="ref-earl-schema">[<abbr>EARL</abbr>
+  Schema]</a></dt>
+    <dd><a
+      href="http://www.w3.org/TR/2007/WD-EARL10-Schema-20070323/">"Evaluation
+      and Report Language (<abbr>EARL</abbr>) 1.0 Schema"</a> – Shadi
+      Abou-Zahra, <abbr>W3C</abbr> Working Draft 23 March 2007.</dd>
+  <dt><a id="ref-httprdf" name="ref-httprdf">[<abbr>HTTP</abbr> in
+  <abbr>RDF</abbr>]</a></dt>
+    <dd><a href="http://www.w3.org/TR/2007/WD-HTTP-in-RDF-20070323/">"HTTP
+      Vocabulary in RDF"</a> – <span xml:lang="de" lang="de">Johannes
+      Koch</span>, <span xml:lang="es" lang="es">Carlos A. Velasco</span>,
+      <span xml:lang="ar" lang="ar">Shadi Abou-Zahra</span>,
+      <abbr>W3C</abbr> Working Draft 23 March 2007.</dd>
+  <dt><a id="ref-intworldstats" name="ref-intworldstats">[Internet World
+  Stats]</a></dt>
+    <dd><a href="http://www.internetworldstats.com/stats.htm">“World
+      Internet Users December 2007"</a> – Internet World Statistics,
+      retrieved 31 March 2008.</dd>
+  <dt><a id="ref-jerome-2007" name="ref-jerome-2007">[Jerome 2007]</a></dt>
+    <dd><a
+      href="http://www.gomestic.com/Consumer-Information/25-Facts-About-Coffee.42195">“25
+      Facts about Coffee”</a> – Louie Jerome, 26 August 2007.</dd>
+  <dt><a id="ref-jsr220" name="ref-jsr220">[<abbr
+  title="Java Specification Request">JSR</abbr>220]</a></dt>
+    <dd><a href="http://jcp.org/en/jsr/detail?id=220">“<abbr
+      title="Java Specification Request">JSR</abbr> 220: Enterprise
+      JavaBeans<sup>TM</sup><!--@@-->
+       3.0”</a> – Linda DeMichiel, Michael Keith.</dd>
+  <dt><a id="ref-mrml" name="ref-mrml">[<abbr
+  title="Mind Reading Markup Language">MRML</abbr>]</a></dt>
+    <dd><a href="http://ifaq.wap.org/computers/mrml.html">“Mind Reading Markup
+      Language (<abbr>MRML</abbr>)”</a> – Michael
+      O’Neal-Petterson, Brandon J. Rickman.</dd>
+  <dt><a id="ref-rdfas" name="ref-rdfas">[<abbr>RDFAS</abbr>]</a></dt>
+    <dd><a href="https://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">“Resource Description
+      Framework (RDF): Concepts and Abstract Syntax”</a> – Graham Klyne,
+      Jeremy J. Carroll, <abbr>W3C</abbr> Recommendation, 10 February
+      2004.</dd>
+  <dt><a id="ref-rdf-primer"
+  name="ref-rdf-primer">[<abbr>RDF</abbr>-PRIMER]</a></dt>
+    <dd><a href="https://www.w3.org/TR/2004/REC-rdf-primer-20040210/"><abbr
+      title="Resource Description Framework">“RDF</abbr> Primer”</a>
+      – Frank Manola, Eric Miller (eds.). <abbr>W3C</abbr>
+      Recommendation, 10 February 2004.</dd>
+  <dt><a id="ref-rfc2324"
+  name="ref-rfc2324">[<abbr>RFC</abbr>2324]</a></dt>
+    <dd><a href="http://www.ietf.org/rfc/rfc2324.txt">“Hyper Text Coffee
+      Pot Control Protocol (<abbr>HTCPCP</abbr>/1.0)”</a> – L.
+      Masinter, 1 April 1998.</dd>
+  <dt><a id="ref-rfc2325"
+  name="ref-rfc2325">[<abbr>RFC</abbr>2325]</a></dt>
+    <dd><a href="http://www.ietf.org/rfc/rfc2325.txt">“Definitions of
+      Managed Objects for Drip-Type Heated Beverage Hardware Devices using
+      <abbr>SMI</abbr><abbr title="version">v</abbr>2”</a> – M.
+      Slavitch, 1 April 1998.</dd>
+  <dt><a id="ref-rfc2235"
+  name="ref-rfc2235">[<abbr>RFC</abbr>2235]</a></dt>
+    <dd><a href="http://www.ietf.org/rfc/rfc2235.txt">“Hobbes’ Internet
+      Timeline”</a> – R. Zakon, November 1997.</dd>
+  <dt><a id="ref-rfc9999"
+  name="ref-rfc9999">[<abbr>RFC</abbr>9999]</a></dt>
+    <dd><a href="http://folk.uio.no/steffenf/rfc9999.txt">“Secure Coffee
+      Pot Layer (<abbr>SCL</abbr>/1.0)”</a> - L. Fiksdal, <abbr
+      title="editor">ed.</abbr>, 1 April 2006.</dd>
+  <dt><a id="ref-villanueva" name="ref-villanueva">[Villanueva]</a></dt>
+    <dd>Cristina M. Villanueva, Kenneth P. Cantor, Will D. King, Jouni J.K.
+      Jaakkola, Sylvaine Cordier, Charles F. Lynch, Stefano Porru, Manolis
+      Kogevinas: “Total and specific fluid consumption as determinants of
+      bladder cancer risk”.  International Journal of Cancer 118 (8):
+      2040–2047. <abbr
+      title="digital object identifier">doi</abbr>:<a
+      href="http://dx.doi.org/10.1002/ijc.21587">10.1002/ijc.21587</a>.</dd>
+</dl>
+</body>
+</html>
