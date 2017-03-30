@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <title>HTCPCP Vocabulary in RDF</title>
-  <link rel="stylesheet" type="text/css" href="../../../css/spec.css" />
+  <link rel="stylesheet" type="text/css" href="WC3-Team-SUBM.css" />
+  <!--link rel="stylesheet" type="text/css" href="di.css" /-->
   <style type="text/css">
       /*<![CDATA[*/
 .issue { border: thin solid #FFAA88;
@@ -13,6 +15,7 @@
           }
 .note { background-color: #dfd;}
 .boilerplate { color: #888;}
+
       /*]]>*/
   </style>
   <style type="text/css">
@@ -71,6 +74,8 @@
       border: 1px dotted #000; color: #000; background-color: #f4f3e7;
     }
   </style>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
 </head>
 
 <body>
@@ -78,35 +83,33 @@
 <div class="head">
 <!--p>@@icons</p-->
 
-<h1 id="main"><abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> Vocabulary in
-<abbr title="Resource Description Framework">RDF</abbr></h1>
+<h1 id="main"><acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym> Vocabulary in
+<acronym title="Resource Description Framework">RDF</acronym></h1>
 
-<h2><abbr title="Web-Controlled Coffee Consortium">WC3</abbr> <abbr
-title="Repository of Funny Content">RFC</abbr> Draft 01 April 2008</h2>
+<h2><acronym title="Web-Controlled Coffee Consortium">WC3</acronym> <acronym
+title="Repository of Funny Content">RFC</acronym> Draft 01 April 2008</h2>
 <dl>
   <dt>This version:</dt>
     <dd><a
-      href="./"
-      >http://cstrobbe.github.io/WC3/TR/2008/RFC-htcpcp-in-rdf-20080401/</a></dd>
+      href="http://purl.org/NET/error404/xp/HTCPCP-in-RDF/20080401/SUBM-htcpcp_in_rdf_20080401.html">http://purl.org/NET/error404/xp/HTCPCP-in-RDF/20080401/SUBM-htcpcp_in_rdf_20080401.html</a></dd>
   <dt>Latest version:</dt>
     <dd><a
-      href="../../htcpcp-in-rdf/"
-      >http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf/</a></dd>
+      href="http://purl.org/NET/error404/xp/HTCPCP-in-RDF/">http://purl.org/NET/error404/xp/HTCPCP-in-RDF/</a></dd>
   <dt>Author:</dt>
     <dd><!--a
             href="http://www.google.cn/search?hl=zh-CN&amp;ie=GB2312&amp;q=%22christophe+strobbe%22&amp;btnG=Google+%CB%D1%CB%F7&amp;meta="-->
       Chief Arabica<!--/a-->
-      , <abbr title="Chief Executive Brewer">CEB</abbr>,
-      <abbr>WC3</abbr><!-- &amp; <a
+      , <acronym title="Chief Executive Brewer">CEB</acronym>,
+      <acronym>WC3</acronym><!-- &amp; <a
             href="http://www.docarch.be/" xml:lang="nl" lang="nl">DocArch,
             Katholieke Universiteit Leuven</a>-->
     </dd>
 </dl>
 
-<p class="copyright">Copyright © 2008 <abbr
-title="Web-Controlled Coffee Consortium">WC3</abbr><sup>®</sup>, All
-Rights Reserved. <abbr>WC3</abbr> liability, trademark and document use
+<p class="copyright">Copyright © 2008 <acronym
+title="Web-Controlled Coffee Consortium">WC3</acronym><sup>®</sup>, All
+Rights Reserved. <acronym>WC3</acronym> liability, trademark and document use
 rules apply.</p>
 </div>
 <hr title="Separator for header" />
@@ -117,20 +120,20 @@ rules apply.</p>
 
 <p>The Hyper Text Coffee Pot Control Protocol (HTCPCP) is a protocol for
 controlling, monitoring and diagnosing coffee pots over a network. The
-Resource Description Framework (<abbr>RDF</abbr>) is a general-purpose
+Resource Description Framework (<acronym>RDF</acronym>) is a general-purpose
 language for representing information in the Web.</p>
 
-<p>This document defines <em><abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> Vocabulary in
-<abbr title="Resource Description Framework">RDF</abbr></em> in order
-to allow <abbr>HTCPCP</abbr> headers that have been exchanged between a
+<p>This document defines <em><acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym> Vocabulary in
+<acronym title="Resource Description Framework">RDF</acronym></em> in order
+to allow <acronym>HTCPCP</acronym> headers that have been exchanged between a
 client (in other words, a coffee addict) and a server (a networked device
 that can brew, store and deliver heated coffee beverages) to be recorded in
-<abbr>RDF</abbr> format. The objective of this vocabulary is to support
-quality assurance testing, and to serve as a machine-readable component in
+<acronym>RDF</acronym> format. The objective of this vocabulary is to support
+qualitiy assurance testing, and to serve as a machine-readable component in
 conformance claims and in reporting languages such as the Evaluation and
-Report Language (<abbr>EARL</abbr>) [<a
-href="#ref-earl-schema"><abbr>EARL</abbr> Schema</a>].</p>
+Report Language (<acronym>EARL</acronym>) [<a
+href="#ref-earl-schema"><acronym>EARL</acronym> Schema</a>].</p>
 </div>
 
 <div>
@@ -139,16 +142,16 @@ href="#ref-earl-schema"><abbr>EARL</abbr> Schema</a>].</p>
 <p>This section describes the status of this document at the time of its
 publication. Other documents may supersede this document.</p>
 
-<p>This <abbr>WC3</abbr> First Public <abbr
-title="Repository of Funny Content">RFC</abbr> Draft of
-<abbr>HTCPCP</abbr> Vocabulary in <abbr>RDF</abbr> was published
+<p>This <acronym>WC3</acronym> First Public <acronym
+title="Repository of Funny Content">RFC</acronym> Draft of
+<acronym>HTCPCP</acronym> Vocabulary in <acronym>RDF</acronym> was published
 on 1 April 2008. This document is expected to be published as a
-<abbr>WC3</abbr> <abbr
-title="Repository of Funny Content">RFC</abbr> Document after more brewing
+<acronym>WC3</acronym> <acronym
+title="Repository of Funny Content">RFC</acronym> Document after more brewing
 experience, tasting and refinement. </p>
 
-<p>Publication as a <abbr>RFC</abbr> Draft does not imply endorsement
-by the <abbr>WC3</abbr> Membership. This is a draft document and may be
+<p>Publication as a <acronym>RFC</acronym> Draft does not imply endorsement
+by the <acronym>WC3</acronym> Membership. This is a draft document and may be
 rebrewed, repoured or become stale at any time. It is inappropriate to cite
 this document as other than brewing in progress.</p>
 </div>
@@ -191,98 +194,98 @@ this document as other than brewing in progress.</p>
 
 <p>Coffee is one of the most popular beverages worldwide [<a
 href="#ref-villanueva">Villanueva</a>] and is the second most traded
-commodity in the world (after oil) [<a href="#ref-investorguide-2017">InvestorGuide
-2017</a>]. Worldwide, about 2.25 billion cups of coffee are drunk every day
-[<a href="#ref-ponte-2002">Ponte 2002</a>]. Internet World Stats estimates
+commodity in the world (after oil) [<a href="#ref-jerome-2007">Jerome
+2007</a>]. Worldwide, more 1400 millions cups of coffee are drunk every day
+[<a href="#ref-jerome-2007">Jerome 2007</a>]. Internet World Stats estimates
 that there are over 1.13 billion internet users worldwide (1,139,872,109 in
 December 2007) [<a href="#ref-intworldstats">Internet World Stats</a>]. Thus,
 there is dark, strong demand for a protocol designed expressoly for
 controlling networked devices that can brew, store and deliver heated coffee
 beverages. The Hyper Text Coffe Pot Control Protocol
-(<abbr>HTCPCP</abbr>) [<a
-href="#ref-rfc2324"><abbr>RFC</abbr>2324</a>] addressed this demand by
-extending <abbr>HTTP</abbr> with commands such as BREW, GET and
+(<acronym>HTCPCP</acronym>) [<a
+href="#ref-rfc2324"><acronym>RFC</acronym>2324</a>] addressed this demand by
+extending <acronym>HTTP</acronym> with commands such as BREW, GET and
 WHEN.</p>
 
 <p>This document defines a representation of the Hyper Text Coffe Pot Control
-Protocol (<abbr>HTCPCP</abbr>) using the Resource Description Framework
-(<abbr>RDF</abbr>). It defines a collection of <abbr
-title="Resource Description Framework">RDF</abbr> classes and properties
-that represent the <abbr
-title="Hyper Text Coffe Pot Control Protocol">HTCPCP</abbr> vocabulary as
-defined by the <abbr
-title="Hyper Text Coffe Pot Control Protocol">HTCPCP</abbr> specification.
-These <abbr title="Resource Description Framework">RDF</abbr> terms can
-be used to record <abbr
-title="Hyper Text Coffe Pot Control Protocol">HTCPCP</abbr> request and
-response messages in <abbr
-title="Resource Description Framework">RDF</abbr> format, for example by
+Protocol (<acronym>HTCPCP</acronym>) using the Resource Description Framework
+(<acronym>RDF</acronym>). It defines a collection of <acronym
+title="Resource Description Framework">RDF</acronym> classes and properties
+that represent the <acronym
+title="Hyper Text Coffe Pot Control Protocol">HTCPCP</acronym> vocabulary as
+defined by the <acronym
+title="Hyper Text Coffe Pot Control Protocol">HTCPCP</acronym> specification.
+These <acronym title="Resource Description Framework">RDF</acronym> terms can
+be used to record <acronym
+title="Hyper Text Coffe Pot Control Protocol">HTCPCP</acronym> request and
+response messages in <acronym
+title="Resource Description Framework">RDF</acronym> format, for example by
 automated coffee quality evaluation tools to describe servings of caffeinated
 beverages, including the various headers exchanged between the client and
-server during coffee negotiation. Since <abbr>HTCPCP</abbr> is defined
-as an extension of <abbr>HTTP</abbr>, the current draft is defined as
-an extension of <abbr>HTTP</abbr> in <abbr>RDF</abbr> [<a
-href="#ref-httprdf"><abbr>HTTP</abbr>-<abbr>RDF</abbr></a>].</p>
+server during coffee negotiation. Since <acronym>HTCPCP</acronym> is defined
+as an extension of <acronym>HTTP</acronym>, the current draft is defined as
+an extension of <acronym>HTTP</acronym> in <acronym>RDF</acronym> [<a
+href="#ref-httprdf"><acronym>HTTP</acronym>-<acronym>RDF</acronym></a>].</p>
 
 <h2>Namespaces</h2>
 
-<p>The <abbr title="Resource Description Framework">RDF</abbr>
-representation of the <abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> vocabulary
+<p>The <acronym title="Resource Description Framework">RDF</acronym>
+representation of the <acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym> vocabulary
 defined by this document uses the following namespaces:</p>
 
 <table summary="Overview of namespaces associated with vocabulary prefixes">
   <thead>
     <tr>
       <th scope="col">Vocabulary</th>
-      <th scope="col">Namespace <abbr
-        title="Uniform Resource Identifier">URI</abbr></th>
+      <th scope="col">Namespace <acronym
+        title="Uniform Resource Identifier">URI</acronym></th>
       <th scope="col">Prefix</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td scope="row"><abbr
-        title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr></td>
-      <td><code>http://cstrobbe.github.io/WC3/TR/htcpcp-in-rdf-rfc#</code></td>
+      <td scope="row"><acronym
+        title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym></td>
+      <td><code>http://purl.org/NET/xp/HTCPCP-in-RDF-rfc#</code></td>
       <td><code>coffee</code></td>
     </tr>
     <tr>
-      <td scope="row"><abbr
-        title="Hyper Text Transfer Protocol">HTTP</abbr></td>
+      <td scope="row"><acronym
+        title="Hyper Text Transfer Protocol">HTTP</acronym></td>
       <td><code>http://www.w3.org/2006/http#</code></td>
       <td><code>http</code></td>
     </tr>
     <tr>
-      <td scope="row"><abbr
-        title="Hyper Text Transfer Protocol">HTTP</abbr> headers</td>
+      <td scope="row"><acronym
+        title="Hyper Text Transfer Protocol">HTTP</acronym> headers</td>
       <td><code>http://www.w3.org/2006/http-header#</code></td>
       <td><code>http-header</code></td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>Note</strong>: the namespace <abbr>URI</abbr> for <abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> is temporary
-and will be updated when <em><abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> Vocabulary in
-<abbr title="Resource Description Framework">RDF</abbr></em> is
+<p><strong>Note</strong>: the namespace <acronym>URI</acronym> for <acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym> is temporary
+and will be updated when <em><acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym> Vocabulary in
+<acronym title="Resource Description Framework">RDF</acronym></em> is
 finalized.</p>
 
-<h2><abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr>/1.0
-Connection Class (<abbr title="Request for Comment">RFC</abbr>
+<h2><acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym>/1.0
+Connection Class (<acronym title="Request for Comment">RFC</acronym>
 2324)</h2>
 
 <p>The <code>coffee:Connection</code> class represents a connection that is
-used for <abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr> control. The
+used for <acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym> control. The
 following properties may appear in nodes of type <code>Connection</code>:</p>
 <ul>
   <li><code>http:connectionAuthority</code> representing the connected
     authority (server host and port), and</li>
-  <li><code>http:request</code> representing an <abbr
-    title="Hyper Text Transfer Protocol">HTTP</abbr> request.</li>
+  <li><code>http:request</code> representing an <acronym
+    title="Hyper Text Transfer Protocol">HTTP</acronym> request.</li>
 </ul>
 
 <div class="example">
@@ -297,8 +300,8 @@ following properties may appear in nodes of type <code>Connection</code>:</p>
 
 <p>When the <code>coffee:Connection</code> class is used to record more than
 one request sent to a coffee pot, the order of these requests (usually coffee
-cups) may be significant. For such cases, an <abbr
-title="Resource Description Framework">RDF</abbr> collection can be used
+cups) may be significant. For such cases, an <acronym
+title="Resource Description Framework">RDF</acronym> collection can be used
 as follows:</p>
 
 <div class="example">
@@ -314,26 +317,26 @@ as follows:</p>
 </div>
 <!-- end example -->
 
-<h2><abbr
-title="Hyper Text Coffee Pot Control Protocol">HTCPCP</abbr>/1.0 Added
-Methods (<abbr title="Request for Comment">RFC</abbr> 2324)</h2>
+<h2><acronym
+title="Hyper Text Coffee Pot Control Protocol">HTCPCP</acronym>/1.0 Added
+Methods (<acronym title="Request for Comment">RFC</acronym> 2324)</h2>
 
-<p>This section defines <abbr>RDF</abbr> terms for the
-<abbr>HTCPCP</abbr>/1.0 specification according to [<a
-href="#ref-rfc2324"><abbr>RFC</abbr> 2324</a>].</p>
+<p>This section defines <acronym>RDF</acronym> terms for the
+<acronym>HTCPCP</acronym>/1.0 specification according to [<a
+href="#ref-rfc2324"><acronym>RFC</acronym> 2324</a>].</p>
 
-<h3>Subclasses of the Request Class (<abbr>HTTP</abbr> Vocabulary in
-<abbr>RDF</abbr>)</h3>
+<h3>Subclasses of the Request Class (<acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym>)</h3>
 
-<p><abbr>HTTP</abbr> Vocabulary in <abbr>RDF</abbr> [<a
-href="#ref-httprdf"><abbr>HTTP</abbr>-<abbr>RDF</abbr></a>]
+<p><acronym>HTTP</acronym> Vocabulary in <acronym>RDF</acronym> [<a
+href="#ref-httprdf"><acronym>HTTP</acronym>-<acronym>RDF</acronym></a>]
 already defines a <code>Request</code> class. There are several
-<abbr>HTCPCP</abbr> subclasses that derive from the
+<acronym>HTCPCP</acronym> subclasses that derive from the
 <code>Request</code> class.</p>
 
 <h4><code>Brew</code> Class</h4>
 
-<p>The <code>Brew</code> class represents an <abbr>HTCPCP</abbr> BREW
+<p>The <code>Brew</code> class represents an <acronym>HTCPCP</acronym> BREW
 request.</p>
 
 <div class="example">
@@ -350,27 +353,27 @@ request.</p>
 
 <h4><code>PropFind</code> Class</h4>
 
-<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+<p class="note">(<acronym title="to be brewed">TBB</acronym>)</p>
 
 <h4><code>When</code> Class</h4>
 
-<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+<p class="note">(<acronym title="to be brewed">TBB</acronym>)</p>
 
 <h3>Header Properties</h3>
 
 <h4><code>Safe</code> Property</h4>
 
-<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+<p class="note">(<acronym title="to be brewed">TBB</acronym>)</p>
 
 <h4>Accept Additions Property</h4>
 
-<p class="note">(<abbr title="to be brewed">TBB</abbr>)</p>
+<p class="note">(<acronym title="to be brewed">TBB</acronym>)</p>
 
-<h3>Subclasses of the Response Class (<abbr>HTTP</abbr> Vocabulary in
-<abbr>RDF</abbr>)</h3>
+<h3>Subclasses of the Response Class (<acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym>)</h3>
 
-<p><abbr>HTTP</abbr> Vocabulary in <abbr>RDF</abbr> [<a
-href="#ref-httprdf"><abbr>HTTP</abbr>-<abbr>RDF</abbr></a>]
+<p><acronym>HTTP</acronym> Vocabulary in <acronym>RDF</acronym> [<a
+href="#ref-httprdf"><acronym>HTTP</acronym>-<acronym>RDF</acronym></a>]
 already defines a <code>Response</code> class.</p>
 
 <h2>Vocabulary Terms</h2>
@@ -378,7 +381,7 @@ already defines a <code>Response</code> class.</p>
 <h3>Classes</h3>
 
 <table>
-  <!--caption>Classes in the <abbr>HTCPCP</abbr> namespace</caption-->
+  <!--caption>Classes in the <acronym>HTCPCP</acronym> namespace</caption-->
   <thead>
     <tr>
       <th scope="col">Class name</th>
@@ -406,97 +409,92 @@ already defines a <code>Response</code> class.</p>
 
 <h2>Future Work</h2>
 <ul>
-  <li>An implementation of <abbr>HTCPCP</abbr> in
-    <abbr>RDF</abbr> using Enterprise JavaBeans [<a
-    href="#ref-jsr220"><abbr>JSR</abbr>220</a>].</li>
-  <li>Testing <abbr>HTCPCP</abbr> connections over Secure Coffee Pot
-    Layer (<abbr>SCL</abbr>/1.0) [<a
-    href="#ref-rfc9999"><abbr>RFC</abbr>9999</a>]</li>
-  <li>Link <abbr>HTCPCP</abbr> implementation with <abbr
-    title="Mind Reading Markup Language">MRML</abbr> implementation [<a
-    href="#ref-mrml"><abbr>MRML</abbr></a>], so brewing of coffee can
+  <li>An implementation of <acronym>HTCPCP</acronym> in
+    <acronym>RDF</acronym> using Enterprise JavaBeans [<a
+    href="#ref-jsr220"><acronym>JSR</acronym>220</a>].</li>
+  <li>Testing <acronym>HTCPCP</acronym> connections over Secure Coffee Pot
+    Layer (<acronym></acronym>SCL<acronym>/1.0</acronym>) [<a
+    href="#ref-rfc9999"><acronym>RFC</acronym>9999</a>]</li>
+  <li>Link <acronym>HTCPCP</acronym> implementation with <acronym
+    title="Mind Reading Markup Language">MRML</acronym> implementation [<a
+    href="#ref-mrml"><acronym>MRML</acronym></a>], so brewing of coffee can
     start when caffeine shortage in detected in user’s brain.</li>
 </ul>
 <hr />
 
 <h2 id="References">References</h2>
 <dl>
-  <dt><a id="ref-earl-schema" name="ref-earl-schema">[<abbr>EARL</abbr>
+  <dt><a id="ref-earl-schema" name="ref-earl-schema">[<acronym>EARL</acronym>
   Schema]</a></dt>
     <dd><a
       href="http://www.w3.org/TR/2007/WD-EARL10-Schema-20070323/">"Evaluation
-      and Report Language (<abbr>EARL</abbr>) 1.0 Schema"</a> – Shadi
-      Abou-Zahra, <abbr>W3C</abbr> Working Draft 23 March 2007.</dd>
-  <dt><a id="ref-httprdf" name="ref-httprdf">[<abbr>HTTP</abbr> in
-  <abbr>RDF</abbr>]</a></dt>
+      and Report Language (<acronym>EARL</acronym>) 1.0 Schema"</a> – Shadi
+      Abou-Zahra, <acronym>W3C</acronym> Working Draft 23 March 2007.</dd>
+  <dt><a id="ref-httprdf" name="ref-httprdf">[<acronym>HTTP</acronym> in
+  <acronym>RDF</acronym>]</a></dt>
     <dd><a href="http://www.w3.org/TR/2007/WD-HTTP-in-RDF-20070323/">"HTTP
       Vocabulary in RDF"</a> – <span xml:lang="de" lang="de">Johannes
       Koch</span>, <span xml:lang="es" lang="es">Carlos A. Velasco</span>,
       <span xml:lang="ar" lang="ar">Shadi Abou-Zahra</span>,
-      <abbr>W3C</abbr> Working Draft 23 March 2007.</dd>
+      <acronym>W3C</acronym> Working Draft 23 March 2007.</dd>
   <dt><a id="ref-intworldstats" name="ref-intworldstats">[Internet World
   Stats]</a></dt>
     <dd><a href="http://www.internetworldstats.com/stats.htm">“World
       Internet Users December 2007"</a> – Internet World Statistics,
       retrieved 31 March 2008.</dd>
-  <dt><a id="ref-investorguide-2017" name="ref-investorguide-2017">[InvestorGuide 2017]</a></dt>
+  <dt><a id="ref-jerome-2007" name="ref-jerome-2007">[Jerome 2007]</a></dt>
     <dd><a
-      href="http://www.investorguide.com/article/11836/what-are-the-most-commonly-traded-commodities-igu/">“What
-      are the Most Commonly Traded Commodities?”</a> – InvestorGuide.com, 2017.</dd>
-  <dt><a id="ref-jsr220" name="ref-jsr220">[<abbr
-  title="Java Specification Request">JSR</abbr>220]</a></dt>
-    <dd><a href="http://jcp.org/en/jsr/detail?id=220">“<abbr
-      title="Java Specification Request">JSR</abbr> 220: Enterprise
+      href="http://www.gomestic.com/Consumer-Information/25-Facts-About-Coffee.42195">“25
+      Facts about Coffee”</a> – Louie Jerome, 26 August 2007.</dd>
+  <dt><a id="ref-jsr220" name="ref-jsr220">[<acronym
+  title="Java Specification Request">JSR</acronym>220]</a></dt>
+    <dd><a href="http://jcp.org/en/jsr/detail?id=220">“<acronym
+      title="Java Specification Request">JSR</acronym> 220: Enterprise
       JavaBeans<sup>TM</sup><!--@@-->
-      3.0”</a> – Linda DeMichiel, Michael Keith.</dd>
-  <dt><a id="ref-mrml" name="ref-mrml">[<abbr
-  title="Mind Reading Markup Language">MRML</abbr>]</a></dt>
-    <dd><a href="http://ifaq.wap.org/computers/mrml.html">“Mind Reading Markup
-      Language (<abbr>MRML</abbr>)”</a> – Michael
+       3.0”</a> – Linda DeMichiel, Michael Keith.</dd>
+  <dt><a id="ref-mrml" name="ref-mrml">[<acronym
+  title="Mind Reading Markup Language">MRML</acronym>]</a></dt>
+    <dd><a href="http://jcp.org/en/jsr/detail?id=220">“Mind Reading Markup
+      Language (<acronym>MRML</acronym>)”</a> – Michael
       O’Neal-Petterson, Brandon J. Rickman.</dd>
-  <dt><a id="ref-ponte-2002" name="ref-ponte-2002">[Ponte 2002]</a></dt>
-    <dd><a
-      href="http://www.sciencedirect.com/science/article/pii/S0305750X02000323">“The 
-      `Latte Revolution'? Regulation, Markets and Consumption in the Global Coffee Chain”</a> 
-      – Stefano Ponte, <i class="journal">World Development</i> Volume 30, Issue 7 (July 2002): pages 1099–1122.</dd>
-  <dt><a id="ref-rdfas" name="ref-rdfas">[<abbr>RDFAS</abbr>]</a></dt>
-    <dd><a href="https://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">“Resource Description
+  <dt><a id="ref-rdfas" name="ref-rdfas">[<acronym>RDFAS</acronym>]</a></dt>
+    <dd><a href="http://www.w3.org/TR/rdf-concepts/">“Resource Description
       Framework (RDF): Concepts and Abstract Syntax”</a> – Graham Klyne,
-      Jeremy J. Carroll, <abbr>W3C</abbr> Recommendation, 10 February
+      Jeremy J. Carroll, <acronym>W3C</acronym> Recommendation, 10 February
       2004.</dd>
   <dt><a id="ref-rdf-primer"
-  name="ref-rdf-primer">[<abbr>RDF</abbr>-PRIMER]</a></dt>
-    <dd><a href="https://www.w3.org/TR/2004/REC-rdf-primer-20040210/"><abbr
-      title="Resource Description Framework">“RDF</abbr> Primer”</a>
-      – Frank Manola, Eric Miller (eds.). <abbr>W3C</abbr>
+  name="ref-rdf-primer">[<acronym>RDF</acronym>-PRIMER]</a></dt>
+    <dd><a href="http://www.w3.org/TR/rdf-primer/"><acronym
+      title="Resource Description Framework">“RDF</acronym> Primer”</a>
+      – Frank Manola, Eric Miller (eds.). <acronym>W3C</acronym>
       Recommendation, 10 February 2004.</dd>
   <dt><a id="ref-rfc2324"
-  name="ref-rfc2324">[<abbr>RFC</abbr>2324]</a></dt>
+  name="ref-rfc2324">[<acronym>RFC</acronym>2324]</a></dt>
     <dd><a href="http://www.ietf.org/rfc/rfc2324.txt">“Hyper Text Coffee
-      Pot Control Protocol (<abbr>HTCPCP</abbr>/1.0)”</a> – L.
+      Pot Control Protocol (<acronym>HTCPCP</acronym>/1.0)”</a> – L.
       Masinter, 1 April 1998.</dd>
   <dt><a id="ref-rfc2325"
-  name="ref-rfc2325">[<abbr>RFC</abbr>2325]</a></dt>
+  name="ref-rfc2325">[<acronym>RFC</acronym>2325]</a></dt>
     <dd><a href="http://www.ietf.org/rfc/rfc2325.txt">“Definitions of
       Managed Objects for Drip-Type Heated Beverage Hardware Devices using
-      <abbr>SMI</abbr><abbr title="version">v</abbr>2”</a> – M.
+      <acronym>SMI</acronym><abbr title="version">v</abbr>2”</a> – M.
       Slavitch, 1 April 1998.</dd>
   <dt><a id="ref-rfc2235"
-  name="ref-rfc2235">[<abbr>RFC</abbr>2235]</a></dt>
+  name="ref-rfc2235">[<acronym>RFC</acronym>2235]</a></dt>
     <dd><a href="http://www.ietf.org/rfc/rfc2235.txt">“Hobbes’ Internet
       Timeline”</a> – R. Zakon, November 1997.</dd>
   <dt><a id="ref-rfc9999"
-  name="ref-rfc9999">[<abbr>RFC</abbr>9999]</a></dt>
+  name="ref-rfc9999">[<acronym>RFC</acronym>9999]</a></dt>
     <dd><a href="http://folk.uio.no/steffenf/rfc9999.txt">“Secure Coffee
-      Pot Layer (<abbr>SCL</abbr>/1.0)”</a> - L. Fiksdal, <abbr
+      Pot Layer (<acronym>SCL</acronym>/1.0)”</a> - L. Fiksdal, <abbr
       title="editor">ed.</abbr>, 1 April 2006.</dd>
   <dt><a id="ref-villanueva" name="ref-villanueva">[Villanueva]</a></dt>
     <dd>Cristina M. Villanueva, Kenneth P. Cantor, Will D. King, Jouni J.K.
       Jaakkola, Sylvaine Cordier, Charles F. Lynch, Stefano Porru, Manolis
       Kogevinas: “Total and specific fluid consumption as determinants of
       bladder cancer risk”.  International Journal of Cancer 118 (8):
-      2040–2047. <abbr
-      title="digital object identifier">doi</abbr>:<a
+      2040–2047. <acronym
+      title="digital object identifier">doi</acronym>:<a
       href="http://dx.doi.org/10.1002/ijc.21587">10.1002/ijc.21587</a>.</dd>
 </dl>
 </body>
